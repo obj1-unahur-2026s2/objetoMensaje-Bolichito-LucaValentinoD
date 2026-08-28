@@ -68,11 +68,77 @@ object placa{
         return peso
     }
 }
+object arito {
+
+    method color() {
+        return celeste
+    }
+
+    method material() {
+        return cobre
+    }
+
+    method peso() {
+        return 180
+    }
+
+}
+
+object banquito {
+
+    var colorActual = naranja
+
+    method color() {
+        return colorActual
+    }
+
+    method cambiarColor(nuevoColor) {
+        colorActual = nuevoColor
+    }
+
+    method material() {
+        return madera
+    }
+
+    method peso() {
+        return 1700
+    }
+
+}
+
+object cajita {
+
+    var objetoAdentro = remera
+
+    method color() {
+        return rojo
+    }
+
+    method material() {
+        return cobre
+    }
+
+    method guardarAdentro(objeto) {
+        objetoAdentro = objeto
+    }
+
+    method peso() {
+        return 400 + objetoAdentro.peso()
+    }
+
+}
 
 object rojo{
     method esDeColorFuerte(){
         return true
     }
+}
+object naranja {
+
+    method esDeColorFuerte() {
+        return true
+    }
+
 }
 
 object verde{
@@ -94,31 +160,31 @@ object pardo{
 }
 
 object cobre{
-    method esBrillante(){
+    method esDeMaterialQueBrilla(){
         return true
     }
 }
 
 object vidrio{
-    method esBrillante(){
+    method esDeMaterialQueBrilla(){
         return true
     }
 }
 
 object lino{
-    method esBrillante(){
+    method esDeMaterialQueBrilla(){
         return false
     }
 }
 
 object madera{
-    method esBrillante(){
+    method esDeMaterialQueBrilla(){
         return false
     }
 }
 
 object cuero{
-    method esBrillante(){
+    method esDeMaterialQueBrilla(){
         return false
     }
 }

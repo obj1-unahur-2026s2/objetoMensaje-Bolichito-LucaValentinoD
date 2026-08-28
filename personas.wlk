@@ -12,7 +12,7 @@ object estefania{
 
 object luisa{
     method leGusta(objeto){
-        return objeto.material().esBrillante()
+        return objeto.material().esDeMaterialQueBrilla()
     }
 }
 

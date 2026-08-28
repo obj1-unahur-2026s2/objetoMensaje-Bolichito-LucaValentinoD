@@ -1,4 +1,4 @@
-object bolichito{
+object bolichito {
     var objetoVidriera = remera
     var objetoMostrador = pelota
 
@@ -18,19 +18,25 @@ object bolichito{
         objetoMostrador = objeto
     }
 
-    method esMonocromatico(){
-        return objetoVidriera().color() == objetoMostrador().color()
+    method esMonocromatico() {
+        return objetoVidriera.color() == objetoMostrador.color()
     }
 
-    method estaEquilibrado(){
-        return objetoVidriera().peso() < objetoMostrador().peso()
+    method estaEquilibrado() {
+        return objetoMostrador.peso() > objetoVidriera.peso()
     }
 
-    method hayObjeto_color_aMejorar(color){
-        return (objetoMostrador().color() == color && self.mejorable()) ||(objetoVidriera().color() == color && self.mejorable()) 
+    method tieneAlgoExhibidoDe(color) {
+        return objetoMostrador.color() == color ||
+               objetoVidriera.color() == color
     }
 
-    method puedeMejorar(){
-        return estaEquilibrado() || esMonocromatico()
+    method puedeMejorar() {
+        return !estaEquilibrado() || esMonocromatico()
     }
+    
+    method puedeOfrecerleAlgoA(persona) {
+    return persona.leGusta(objetoVidriera) ||
+           persona.leGusta(objetoMostrador)
+}
 }
